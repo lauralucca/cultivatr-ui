@@ -1,9 +1,3 @@
 .DS_Store
-*.class
-api/.gradle/
-api/build/
-*.iml
 .idea/
-api/.idea/
-ui/.idea/
-ui/node_modules/
+node_modules/
