@@ -3,7 +3,7 @@ import HelloApi from './api';
 
 async function getHello(name) {
     const hello = await HelloApi.get(name)
-    console.log(hello)
+    alert(hello)
 }
 
 function App() {
