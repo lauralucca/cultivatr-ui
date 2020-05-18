@@ -1,18 +1,23 @@
-import React, { Component } from 'react'
+import React from 'react'
+import {User} from '../api'
 
-class UserSignUp extends Component{
-    
-    handleSubmit = () => { }
-
-    render(){
-        return(
-            <form onSubmit={this.handleSubmit}>
-                <input role="name"/>
-                <input role="email"/>
-                <input type="submit" role="submit" />
-            </form>
-        )
+const handleSubmit = async (event) => {
+    event.preventDefault()
+    const userInfo = {
+        name: event.target.elements.name.value,
+        email: event.target.elements.email.value
     }
+    await User.saveNew(userInfo)
+}
+
+const UserSignUp = ({ onSubmit = handleSubmit }) => {
+    return(
+        <form onSubmit={onSubmit}>
+            <input type="text" data-testid="name" id="name" />
+            <input type="text" data-testid="email" id="email" />
+            <input type="submit" data-testid="submit"/>
+        </form>
+    )
 }
 
 export default UserSignUp
