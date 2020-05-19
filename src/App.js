@@ -9,8 +9,7 @@ async function getHello(name) {
 
 function App() {
   return (
-    <div className="App">
-        <button onClick={() => getHello('agatha')}>hello</button>
+    <div className="text-center">
         <UserSignUp />
     </div>
   );
