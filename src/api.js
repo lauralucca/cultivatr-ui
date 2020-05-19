@@ -11,7 +11,6 @@ const HelloApi = {
 export const User = {
   saveNew: async data => {
     const response = await axios.post(`${baseURL}/user`, data)
-    console.log('CHAMOU', response, data)
     return response
   }
 }
