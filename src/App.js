@@ -1,23 +1,25 @@
 import React from 'react';
+import { BrowserRouter as Router,Switch, Route } from "react-router-dom"
 import UserSignUp from './UserSignUp/UserSignUp'
-import GoogleLogin from 'react-google-login'
-
-const responseGoogle = (response) => {
-  console.log(response);
-}
+import Login from './Login/Login'
 
 function App() {
   return (
-    <div className="text-center">
-        <UserSignUp />
-        <GoogleLogin
-        clientId="888291695738-c01715sl74g8g2plmenm40bgcccofvi0.apps.googleusercontent.com"
-        buttonText="Login"
-        onSuccess={responseGoogle}
-        onFailure={responseGoogle}
-        cookiePolicy={'single_host_origin'}
-        />
-    </div>
+    <Router>
+      <Switch>
+        <div className="text-center">
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/">
+              <Login />
+            </Route>
+            <Route path="/cadastro">
+              <UserSignUp />
+            </Route>
+        </div>
+      </Switch>
+    </Router>
   );
 }
 
