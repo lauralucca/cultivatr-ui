@@ -36,7 +36,3 @@ test("submits user name and email", async () => {
   expect(axiosMock.post).toHaveBeenCalledTimes(1);
   expect(axiosMock.post).toHaveBeenCalledWith(mockedURL, mockedUserInfo);
 });
-
-test("tests if pipeline will break", () => {
-  expect(12).toBe(21);
-});
