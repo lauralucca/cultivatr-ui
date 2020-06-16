@@ -18,11 +18,7 @@ workflows:
         - build-and-test
         - heroku/deploy-via-git:
             requires:
-<<<<<<< HEAD
               - build-and-test # only run deploy-via-git job if the build job has completed
-=======
-              - build # only run deploy-via-git job if the build job has completed
->>>>>>> 5c4dbd3b25bfd57a6cb5afa05df6f7bf8cb9d396
             filters:
               branches:
                 only: master # only run deploy-via-git job on master branch
