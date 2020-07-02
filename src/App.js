@@ -1,25 +1,31 @@
 import React from 'react';
 import { BrowserRouter as Router,Switch, Route } from "react-router-dom"
-import UserSignUp from './UserSignUp/UserSignUp'
-import Login from './Login/Login'
+import UserSignUp from './pages/UserSignUp/UserSignUp'
+import Login from './pages/Login/Login'
+import Header from './components/Header/Header';
+import { ThemeProvider } from 'styled-components';
+import { MAIN_THEME } from './styles/theme'
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <div className="text-center">
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route exact path="/">
-              <Login />
-            </Route>
-            <Route path="/cadastro">
-              <UserSignUp />
-            </Route>
-        </div>
-      </Switch>
-    </Router>
+    <ThemeProvider theme={ MAIN_THEME }>
+      <Router>
+        <Header />
+        <Switch>
+          <div className="text-center">
+              <Route exact path="/">
+                <Login />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <Route path="/cadastro">
+                <UserSignUp />
+              </Route>
+          </div>
+        </Switch>
+      </Router>
+    </ThemeProvider>
   );
 }
 
