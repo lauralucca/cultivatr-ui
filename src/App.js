@@ -5,6 +5,7 @@ import Login from './pages/Login/Login'
 import Header from './components/Header/Header';
 import { ThemeProvider } from 'styled-components';
 import { MAIN_THEME } from './styles/theme'
+import Dashboard from './pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
               </Route>
               <Route path="/login">
                 <Login />
+              </Route>
+              <Route path="/inicio">
+                <Dashboard />
               </Route>
               <Route path="/cadastro">
                 <UserSignUp />
