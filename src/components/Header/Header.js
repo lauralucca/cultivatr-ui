@@ -22,15 +22,15 @@ const Header = () => {
     const theme = useContext(ThemeContext)
     return ( 
         <StyledHeader theme={theme} >
-            <img data-testid="logo" src={logo}/>
+            <img data-testid="logo" src={logo} alt="Logo da aplicação" />
             <nav>
                 <NavLink data-testid="dashboard" id="dashboard" to="/">Início</NavLink>
-                <NavLink data-testid="profile" to="/login">Login</NavLink>
-                <NavLink data-testid="interests" to="/cadastro">Cadastro</NavLink>
+                <NavLink data-testid="login" to="/login">Login</NavLink>
+                <NavLink data-testid="interests" to="/interesses">Interesses</NavLink>
             </nav>
         </StyledHeader> 
 
     );
 }
- 
+
 export default Header;

@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router,Switch, Route } from "react-router-dom"
-import UserSignUp from './pages/UserSignUp/UserSignUp'
-import Login from './pages/Login/Login'
-import Header from './components/Header/Header';
 import { ThemeProvider } from 'styled-components';
 import { MAIN_THEME } from './styles/theme'
+import Header from './components/Header/Header';
+import Login from './pages/Login/Login'
 import Dashboard from './pages/Dashboard/Dashboard';
+import UserSignUp from './pages/UserSignUp/UserSignUp'
+import UserInterests from './pages/UserInterests/UserInterests'
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
               </Route>
               <Route path="/inicio">
                 <Dashboard />
+              </Route>
+              <Route path="/interesses">
+                <UserInterests />
               </Route>
               <Route path="/cadastro">
                 <UserSignUp />

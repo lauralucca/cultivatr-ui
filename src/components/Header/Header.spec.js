@@ -18,7 +18,7 @@ test("loads and displays header navigation bar", () => {
     expect(container.querySelector('[id="dashboard"]')).toBeInTheDocument()
     expect(getByTestId('logo')).toBeInTheDocument()
     expect(getByTestId('dashboard')).toBeInTheDocument()
-    expect(getByTestId('profile')).toBeInTheDocument()
+    expect(getByTestId('login')).toBeInTheDocument()
     expect(getByTestId('interests')).toBeInTheDocument()
 
 });
