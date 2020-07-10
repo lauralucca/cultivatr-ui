@@ -16,7 +16,7 @@ test("loads and displays user interests form", () => {
   expect(teachingInterest).toBeInTheDocument()
   expect(addButton).toBeInTheDocument()
   expect(saveButton).toBeInTheDocument()
-});
+})
 
 test("adds new interest to interests list", () =>{
   const {getByTestId} = render(<UserInterests/>)
@@ -24,11 +24,11 @@ test("adds new interest to interests list", () =>{
   const teachingInterest = getByTestId("teaching-interest")
   const interestList = getByTestId("interest-list")
   
-  fireEvent.change(teachingInterest, { target: { value: "TDD"} });
+  fireEvent.change(teachingInterest, { target: { value: "TDD"} })
   fireEvent.click(addButton)
 
-  expect(within(interestList).getByText("TDD")
-  ).toBeInTheDocument()
+  expect(within(interestList).getByText("TDD")).toBeInTheDocument()
+  expect(teachingInterest).toHaveValue("")
   
-});
+})
 

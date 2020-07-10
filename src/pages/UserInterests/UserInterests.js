@@ -1,27 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const handleSubmit = async (event) => {
   event.preventDefault();
   event.target.reset();
 };
 
-
-
 const UserInterests = ({ onSubmit = handleSubmit }) => {
   const [interestList, setInterestList] = useState([])
   const [newInterest, setNewInterest] = useState()
 
   const addNewInterestToInterestList = () => {
-  
     const newList = [newInterest]
     interestList.map(i => newList.push(i))
     setInterestList(newList)
+    setNewInterest("")
   }
-
 
   return (
     <form onSubmit={onSubmit}>
-      <input type="text" data-testid="teaching-interest" placeholder="Interesse" onChange={e => setNewInterest(e.target.value)} />
+      <input
+        type="text"
+        data-testid="teaching-interest"
+        placeholder="Interesse"
+        onChange={e => setNewInterest(e.target.value)}
+        value={newInterest}
+      />
       <input
         type="button"
         data-testid="add-interest"
