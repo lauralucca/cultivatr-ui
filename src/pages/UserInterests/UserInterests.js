@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
+import { Interests } from "../../api"
 
-const handleSubmit = async (event) => {
-  event.preventDefault();
-  event.target.reset();
-};
 
-const UserInterests = ({ onSubmit = handleSubmit }) => {
+const UserInterests = () => {
   const [interestList, setInterestList] = useState([])
-  const [newInterest, setNewInterest] = useState()
+  const [newInterest, setNewInterest] = useState("")
+  
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    Interests.save({ interestList })
+    event.target.reset();
+  };
 
   const addNewInterestToInterestList = () => {
     const newList = [newInterest]
@@ -17,7 +20,7 @@ const UserInterests = ({ onSubmit = handleSubmit }) => {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         data-testid="teaching-interest"
