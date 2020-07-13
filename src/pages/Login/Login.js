@@ -9,6 +9,7 @@ const responseGoogleSuccess = async (response) => {
     }
    
     await User.saveNew(userInfo)
+    localStorage.setItem('user-email', userInfo.email)
   }
 
 const responseGoogleFailure = (response) => {
